@@ -2,21 +2,20 @@ import React from 'react'
 import UseFetch from './UseFetch'
 import './FetchData.css'
 
-const FetchData = () => {
-  const [data]=UseFetch('https://api.npoint.io/9045c260b1565daa9e15');
+const FetchYogaData = () => {
+  const [data]=UseFetch('https://api.npoint.io/4459a9a10e43812e1152');
   console.log(data);
 
   return (
     <>
      <ul className='list_data_main'>
-        <h1 className='usefetch_heading'>Fruits Info</h1>
+        <h1 className='usefetch_heading'>Yoga Info</h1>
         {data && data.map((item) => (
-          <div key={item.name}>
+          <div key={item.benefits}>
             <li className="list_data">
               <h3>{item.name}</h3>
               <p>Benefits: {item.benefits}</p>
-              <p>Importance: {item.importance}</p>
-              <p>Time to eat: {item.best_time_to_intake}</p>
+              <p>Duration: {item.time_duration}</p>
             </li>
           </div>
         ))}
@@ -25,5 +24,5 @@ const FetchData = () => {
   )
 }
 
-export default FetchData
+export default FetchYogaData;
 
